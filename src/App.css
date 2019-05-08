@@ -74,6 +74,14 @@ body {
   z-index: 15;
 }
 
+.menu-button:hover {
+  cursor: pointer;
+}
+
+.menu-button:focus {
+  outline: none;
+}
+
 h1 {
   color: white;
 }
@@ -86,11 +94,13 @@ h1 {
   bottom: 0;
   display: flex;
 }
+
 .checkout-left {
   width: 30%;
   height: 100%;
   background: white;
 }
+
 .checkout-right {
   width: 70%;
   height: 100%;
@@ -108,6 +118,7 @@ h1 {
 .page-route.two {
   background: blueviolet;
 }
+
 .page-route.three {
   background: teal;
 }
@@ -116,6 +127,7 @@ h1 {
   display: flex;
   list-style: none;
 }
+
 .router-nav a {
   color: white;
   font-size: 2rem;

@@ -3,16 +3,21 @@ import { useSpring, animated } from 'react-spring'
 
 const Toggle = () => {
 	const [isToggled, setToggle] = useState(false)
-	const fade = useSpring({
-		// opacity: isToggled ? 1 : 0,
+	const { color, y } = useSpring({
 		color: isToggled ? 'tomato' : 'green',
-		// fontSize: isToggled ? '2rem' : '5em',
-		transform: isToggled ? 'translate3d(0,0,0)' : 'translate3d(0,-50px,0)',
+		y: isToggled ? 0 : -50,
 	})
 
 	return (
 		<div>
-			<animated.h1 style={fade}>Hello</animated.h1>
+			<animated.h1
+				style={{
+					color,
+					transform: y.interpolate(y => `translate3d(0, ${y}px, 0)`),
+				}}
+			>
+				Hello
+			</animated.h1>
 			<button onClick={() => setToggle(!isToggled)}>Toggle</button>
 		</div>
 	)
