@@ -5,7 +5,8 @@ import { useTransition, animated } from 'react-spring'
 // 	const [isToggled, setToggle] = useState(false)
 // 	// useTransition is useful for things like a transition or anything that wants
 // 	// to mount after the page has been rendered.
-// 	// the 1st arg (`isToggled`) determines whether or not the transition is rendered.
+//  // because `isToggled` is initially false, the transition will not be
+//  // rendered initially.
 // 	const transition = useTransition(isToggled, null, {
 // 		from: {
 // 			opacity: 0,
