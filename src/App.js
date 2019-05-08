@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useSpring, animated } from 'react-spring'
 import Nav from './Nav'
+import Modal from './Modal'
 import Routes from './Routes'
 import Checkout from './Checkout'
 import logo from './logo.svg'
@@ -23,7 +24,7 @@ const App = () => {
 				{/* <Nav style={navAnimation} /> */}
 			</header>
 			<main>
-				<Routes />
+				<Modal />
 			</main>
 			<Checkout isOpen={isNavOpen} />
 		</animated.div>
