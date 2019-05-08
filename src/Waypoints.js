@@ -1,6 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { Waypoint } from 'react-waypoint'
+import { animated, useSpring, config } from 'react-spring'
 
 const Waypoints = () => {
+	const [on, toggle] = useState(false)
+	const animation = useSpring({
+		opacity: on ? 1 : 0,
+		transform: on ? 'translate3d(0,0,0)' : 'translate3d(50%, 0, 0)',
+		config: config.wobbly,
+	})
+
 	return (
 		<div className="waypoints">
 			<p>
@@ -18,13 +27,21 @@ const Waypoints = () => {
 				chambray banh mi chia. Blue bottle narwhal iceland health goth cornhole fam humblebrag
 				flannel pitchfork pickled.
 			</p>
-			<p>
-				Jianbing lomo lumbersexual put a bird on it fixie next level pitchfork gentrify, disrupt
-				echo park. Hot chicken subway tile drinking vinegar fixie. YOLO keytar gluten-free artisan
-				live-edge four loko cred man braid food truck leggings. Health goth semiotics kogi heirloom
-				authentic hell of. Pork belly helvetica cornhole gentrify microdosing austin chillwave
-				pitchfork paleo cred raclette venmo vegan fashion axe +1.
-			</p>
+			<div>
+				<Waypoint
+					bottomoffset="30%"
+					onEnter={() => {
+						if (!on) toggle(true)
+					}}
+				/>
+				<animated.p style={animation}>
+					Jianbing lomo lumbersexual put a bird on it fixie next level pitchfork gentrify, disrupt
+					echo park. Hot chicken subway tile drinking vinegar fixie. YOLO keytar gluten-free artisan
+					live-edge four loko cred man braid food truck leggings. Health goth semiotics kogi
+					heirloom authentic hell of. Pork belly helvetica cornhole gentrify microdosing austin
+					chillwave pitchfork paleo cred raclette venmo vegan fashion axe +1.
+				</animated.p>
+			</div>
 			<p>
 				Craft beer tousled ennui ugh, williamsburg stumptown flexitarian plaid activated charcoal.
 				Taxidermy letterpress glossier 8-bit, organic bitters coloring book. Selvage lo-fi

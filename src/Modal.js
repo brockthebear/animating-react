@@ -5,7 +5,7 @@ const Modal = ({ animation, pointerEvents, closeModal }) => {
 	return (
 		<div className="modal" style={{ pointerEvents }}>
 			<animated.div className="modal-card" style={animation}>
-				<button onClick={closeModal}>Close</button>
+				<button onClick={closeModal}>Close Modal</button>
 				<h1>Modal</h1>
 			</animated.div>
 		</div>
@@ -34,7 +34,7 @@ const ModalWrapper = () => {
 						/>
 					)
 			)}
-			<button onClick={() => toggle(!on)}>Open</button>
+			<button onClick={() => toggle(!on)}>Open Modal</button>
 		</div>
 	)
 }

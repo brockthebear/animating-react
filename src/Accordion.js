@@ -4,10 +4,7 @@ import useMeasure from './useMeasure'
 
 const Accordion = () => {
 	const [on, toggle] = useState(false)
-	const [bind, measure] = useMeasure()
-	console.log('measure ', measure)
-	const height = measure.height // height
-	const top = measure.top // padding-top
+	const [bind, { height, top }] = useMeasure()
 
 	const animation = useSpring({
 		overflow: 'hidden',
