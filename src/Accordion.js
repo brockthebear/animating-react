@@ -14,7 +14,7 @@ const Accordion = () => {
 	return (
 		<div>
 			<h1>
-				<button onClick={() => toggle(!on)}>Toggle</button>
+				<button onClick={() => toggle(!on)}>Toggle Accordion</button>
 			</h1>
 			<animated.div style={animation}>
 				<div className="accordion" {...bind}>
