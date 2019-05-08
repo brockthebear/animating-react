@@ -1,9 +1,13 @@
 import React, { useState } from 'react'
-import { animated, useSpring } from 'react-spring'
+import { animated, useSpring, config } from 'react-spring'
 
 const Checkout = ({ isOpen }) => {
 	const { x } = useSpring({
 		x: isOpen ? 0 : 100,
+		config: {
+			// a full list of react-sprint configs can be found at https://www.react-spring.io/docs/hooks/api
+			...config.default, // config.[wobbly,gentle,stiff,molasses,slow]
+		},
 	})
 
 	return (
