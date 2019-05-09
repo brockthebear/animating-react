@@ -188,7 +188,6 @@ h1 {
   grid-gap: 20px;
 }
 
-
 .boxes-grid button {
   width: 100px;
   justify-self: center;
@@ -206,8 +205,10 @@ h1 {
   box-shadow: 0px 10px 10px -5px rgba(0, 0, 0, 0.05);
   grid-template-columns: repeat(4, minmax(100px, 1fr));
   grid-gap: 20px;
-  padding: 20px;
   background: white;
+}
+.boxes-grid-two:hover {
+  cursor: pointer;
 }
 
 .box-two {
@@ -218,5 +219,5 @@ h1 {
 }
 
 .full-height {
-  height: 100vh;
+  height: 50vh;
 }
